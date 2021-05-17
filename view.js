@@ -5,7 +5,7 @@ const prompt = require('prompt-sync')({sigint: true})
 const {printTable} = require('console-table-printer')
 const {model} = require('./model')
 
-
+//title of the app
 function getTitle(){
     return chalk.blue(
         figlet.textSync(
@@ -19,6 +19,7 @@ function getTitle(){
 }
 //console.log(getTitle())
 
+//creates table
 function getTable(model){
     return [
         {'Bill Amount': model.amount,'Tip(%)': model.tipp,'Tip': model.tip ,'Total': model.total}
@@ -32,13 +33,13 @@ function inputForm(model){
     const message = 'Bill Amount?'
     const message2 = 'Tip Percentage?'
     return inquirer.prompt([
-        {
+        {//first input
             name: 'amount',
             type: 'input',
             message: message,
             default: model.amount,
         },
-
+        //second input
         {   name: 'tipp',
             type: 'input',
             message: message2,

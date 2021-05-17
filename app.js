@@ -13,17 +13,19 @@ async function app(state, update, view){
         const {title, table} = currentView
         // I/O
         console.clear()
-        console.log(title)
-        printTable(table)
+        console.log(title)//printing the title
+        printTable(table)//printing the table
+        console.log('Ctrl+C to exit')//how to exit from the app
         // FORM (Ask user input)
         //const {input} = await listForm(model)         ---listForm not yet used on this program
         const input = await inputForm(model)
-        const updatedModel = update(input, model)
+        const updatedModel = update(input, model) //updating the model for the app
         state = {
             ...state,
             model: updatedModel,
             currentView: view(updatedModel)
         }
+        console.clear()
     }
 }
 

@@ -1,7 +1,7 @@
 
 
 
-
+//initiation model for the app
 initModel = {
     amount: 0,
     tipp: 0,//tipp refers to tip percentage
